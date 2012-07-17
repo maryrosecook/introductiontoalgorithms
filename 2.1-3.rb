@@ -1,12 +1,6 @@
 # get item index in array, or return nil if does not exist
 
-# loop invariant init:
-#  item = nil; if not items in arr, will return nil
-# loop invariant maintenance:
-#  0 <= i < arr.length - 1; if desired item is at pos i, the loop will return it
-# loop invariant termination
-#  i = arr.length - 1; if item has not been found, it is not there
-# intentionally using iterator because that is what the algorithm requires
+# loop invariant: items 0 to i are not the item being sought
 
 def find(arr, item)
   i = 0

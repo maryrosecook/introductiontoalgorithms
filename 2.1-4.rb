@@ -6,13 +6,13 @@ def binary_add(a, b)
   c = []
   carry = 0
   for i in (0..a.length-1).to_a.reverse
-    current_out = 0
     current_addition = a[i] + b[i]
     if carry > 0
       current_addition += carry
       carry = 0
     end
 
+    current_out = 0
     case current_addition
     when 1
       current_out = 1
@@ -33,14 +33,9 @@ end
 a =    [0, 1, 1, 0, 1, 1, 1, 0]
 b =    [1, 0, 1, 0, 1, 1, 0, 0]
 c = [1, 0, 0, 0, 1, 1, 0, 1, 0]
-
-result = binary_add(a, b)
-p result
-p c == result
+p binary_add(a, b) == c
 
 a =    [0, 1, 1, 0, 1]
 b =    [1, 0, 1, 1, 1]
 c = [1, 0, 0, 1, 0, 0]
-result = binary_add(a, b)
-p result
-p c == result
+p binary_add(a, b) == c
